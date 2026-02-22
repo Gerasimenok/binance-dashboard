@@ -1,0 +1,11 @@
+<div class="toolbar">
+  <button
+    *ngFor="let i of intervals"
+    (click)="changeInterval(i)"
+    [class.active]="interval === i"
+  >
+    {{ i }}
+  </button>
+</div>
+
+<div echarts [options]="options" class="chart"></div>

@@ -1,0 +1,21 @@
+.chart {
+    height: 420px;
+  }
+  
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+  
+    button {
+      padding: 4px 10px;
+      border: 1px solid #ccc;
+      background: #f7f7f7;
+      cursor: pointer;
+  
+      &.active {
+        background: #1976d2;
+        color: #fff;
+      }
+    }
+  }

@@ -1,0 +1,27 @@
+<input
+  type="text"
+  placeholder="Search pair"
+  [(ngModel)]="search"
+  (input)="applyFilter()"
+/>
+
+<cdk-virtual-scroll-viewport itemSize="48" class="viewport">
+  <div
+    class="row"
+    *cdkVirtualFor="let t of filtered; trackBy: trackBySymbol"
+    [routerLink]="['/pair', t.symbol]"
+  >
+    <span (click)="toggleFavorite(t.symbol, $event)">
+      {{ isFavorite(t.symbol) ? "⭐" : "☆" }}
+    </span>
+
+    <span (click)="sort('symbol')">{{ t.symbol }}</span>
+    <span (click)="sort('lastPrice')">{{ t.lastPrice }}</span>
+    <span (click)="sort('priceChangePercent')">
+      {{ t.priceChangePercent }}%
+    </span>
+    <span (click)="sort('volume')">
+      {{ t.volume }}
+    </span>
+  </div>
+</cdk-virtual-scroll-viewport>

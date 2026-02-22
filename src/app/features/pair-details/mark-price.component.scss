@@ -1,0 +1,30 @@
+.mark-info {
+    display: flex;
+    gap: 24px;
+    padding: 12px 16px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+  
+    :host-context(body.dark) & {
+      background: #2d2d2d;
+    }
+  }
+  
+  .mark-price {
+    font-weight: 600;
+    color: #1976d2;
+  }
+  
+  .funding-rate {
+    font-weight: 600;
+  
+    &.positive {
+      color: #2e7d32;
+    }
+  
+    &.negative {
+      color: #c62828;
+    }
+  }

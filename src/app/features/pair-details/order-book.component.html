@@ -1,0 +1,37 @@
+<h3>Order Book (Top 20)</h3>
+
+<div class="book">
+  <div class="side bids">
+    <div class="header">
+      <span>Price</span>
+      <span>Qty</span>
+    </div>
+
+    <div
+      class="row"
+      *ngFor="let b of bids"
+      [class.up]="b.highlight === 'up'"
+      [class.down]="b.highlight === 'down'"
+    >
+      <span class="price">{{ b.price }}</span>
+      <span>{{ b.quantity }}</span>
+    </div>
+  </div>
+
+  <div class="side asks">
+    <div class="header">
+      <span>Price</span>
+      <span>Qty</span>
+    </div>
+
+    <div
+      class="row"
+      *ngFor="let a of asks"
+      [class.up]="a.highlight === 'up'"
+      [class.down]="a.highlight === 'down'"
+    >
+      <span class="price">{{ a.price }}</span>
+      <span>{{ a.quantity }}</span>
+    </div>
+  </div>
+</div>

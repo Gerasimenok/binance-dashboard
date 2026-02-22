@@ -1,0 +1,10 @@
+<div class="mark-info" *ngIf="markPrice">
+  <span class="mark-price">Mark Price: {{ markPrice }}</span>
+  <span
+    class="funding-rate"
+    [class.positive]="+fundingRate > 0"
+    [class.negative]="+fundingRate < 0"
+  >
+    Funding Rate: {{ fundingRate }}%
+  </span>
+</div>

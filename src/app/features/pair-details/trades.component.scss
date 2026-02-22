@@ -1,0 +1,28 @@
+.trades {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 13px;
+  }
+  
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  
+  .trade {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2px 0;
+  
+    &.buy {
+      color: #2e7d32;
+    }
+  
+    &.sell {
+      color: #c62828;
+    }
+  }

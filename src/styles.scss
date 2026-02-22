@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+body.light {
+    background: #ffffff;
+    color: #111;
+  }
+  
+  body.dark {
+    background: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark .row:hover {
+    background: #1e1e1e;
+  }
+  
+  body.dark .viewport {
+    border-color: #333;
+  }
+  
+  body.dark .side {
+    border-color: #333;
+    background: #1a1a1a;
+  }
+  
+  body.dark .stats {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+  

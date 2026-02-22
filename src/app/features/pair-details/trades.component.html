@@ -1,0 +1,20 @@
+<h3>Recent Trades</h3>
+
+<div class="trades">
+  <div class="header">
+    <span>Price</span>
+    <span>Qty</span>
+    <span>Time</span>
+  </div>
+
+  <div
+    class="trade"
+    *ngFor="let trade of trades"
+    [class.sell]="trade.isBuyerMaker"
+    [class.buy]="!trade.isBuyerMaker"
+  >
+    <span>{{ trade.price }}</span>
+    <span>{{ trade.quantity }}</span>
+    <span>{{ trade.time | date : "HH:mm:ss" }}</span>
+  </div>
+</div>
