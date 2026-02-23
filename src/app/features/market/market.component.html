@@ -5,6 +5,23 @@
   (input)="applyFilter()"
 />
 
+<div class="header-row">
+  <span class="favorite-header"></span>
+  <span class="clickable" (click)="sort('symbol')">
+    Symbol {{ sortColumn === "symbol" ? (sortAsc ? "↑" : "↓") : "" }}
+  </span>
+  <span class="clickable" (click)="sort('lastPrice')">
+    Price {{ sortColumn === "lastPrice" ? (sortAsc ? "↑" : "↓") : "" }}
+  </span>
+  <span class="clickable" (click)="sort('priceChangePercent')">
+    Change
+    {{ sortColumn === "priceChangePercent" ? (sortAsc ? "↑" : "↓") : "" }}
+  </span>
+  <span class="clickable" (click)="sort('volume')">
+    Volume {{ sortColumn === "volume" ? (sortAsc ? "↑" : "↓") : "" }}
+  </span>
+</div>
+
 <cdk-virtual-scroll-viewport itemSize="48" class="viewport">
   <div
     class="row"
@@ -15,13 +32,14 @@
       {{ isFavorite(t.symbol) ? "⭐" : "☆" }}
     </span>
 
-    <span (click)="sort('symbol')">{{ t.symbol }}</span>
-    <span (click)="sort('lastPrice')">{{ t.lastPrice }}</span>
-    <span (click)="sort('priceChangePercent')">
+    <span>{{ t.symbol }}</span>
+    <span>{{ t.lastPrice }}</span>
+    <span
+      [class.up]="+t.priceChangePercent > 0"
+      [class.down]="+t.priceChangePercent < 0"
+    >
       {{ t.priceChangePercent }}%
     </span>
-    <span (click)="sort('volume')">
-      {{ t.volume }}
-    </span>
+    <span>{{ t.volume | number }}</span>
   </div>
 </cdk-virtual-scroll-viewport>
